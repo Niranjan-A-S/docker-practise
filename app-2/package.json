@@ -1,0 +1,10 @@
+{
+  "name": "node-docker-example",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Niranjan A S",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
