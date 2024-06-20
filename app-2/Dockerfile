@@ -4,11 +4,13 @@ FROM node
 WORKDIR /app
 # This tells that all the subsequent commands will be executed in this directory
 
-COPY . /app
-# This will copy all the files from current directory to app directory. The first dot in the cwd where the Dockerfile resides (not sure) and the second dot (in this case ./app) is the filepath in the image
-
+COPY package.json /app
+#This is done first to avoid running the install command in case of any source code changes.
 RUN yarn install
 # This will run when the image is created
+
+COPY . /app
+# This will copy all the files from current directory to app directory. The first dot in the cwd where the Dockerfile resides (not sure) and the second dot (in this case ./app) is the filepath in the image
 
 EXPOSE 3000
 # This is done since the container is not exposed and it has it's own internal networking so it is implictly saying to expose the container port 80
