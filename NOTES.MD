@@ -36,4 +36,11 @@
 - So after adding the bind mount volume we can add anonymous volume that includes the node_modules
 ```bash
 docker run  --name feedback-bind-mount -d -p 8080:3000 -v feedback:/app/feedback -v "C:\Users\niranjan.santhosh\DATA\personal\practise\docker-course\app-volumes:/app" -v /app/node_modules bdb7347e347f
-``
+```
+![alt text](snapshots/image-1.png)
+![alt text](snapshots/image-2.png)
+
+```bash
+docker run -d -p 8080:3000 -v feedback:/app/feedback -v "C:\Users\niranjan.santhosh\DATA\personal\practise\docker-course\app-volumes:/app:ro" -v /app/node_modules -v /app/temp  bdb7347e347f
+ ```
+- In the above command we make the bind mount read only by adding "ro" but then we need to specify "/app/temp" because here writing happens
