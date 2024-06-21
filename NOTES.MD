@@ -25,3 +25,15 @@
 - A container can read and write data into a volume and read data from it
 - There are two types of volumes - anonymous and named. Anonymous volume only exists as long as the container exists. If the container is removed it is gone. It is managed by docker engine.
 - In case of named volumes volumes, folder in the host drive  will survive the container shutdown
+- We don't know where the volumes lies in the host machine
+
+### Bind Mounts
+- Persistent and editable data.
+- we define the path in the host machine
+- This is also a volume where instead of volume name we define the path which should be watched for file changes.
+- The path should be absolute
+- But one problem is we overwrite the container files with bind mount file contents which does not have node modules
+- So after adding the bind mount volume we can add anonymous volume that includes the node_modules
+```bash
+docker run  --name feedback-bind-mount -d -p 8080:3000 -v feedback:/app/feedback -v "C:\Users\niranjan.santhosh\DATA\personal\practise\docker-course\app-volumes:/app" -v /app/node_modules bdb7347e347f
+``
