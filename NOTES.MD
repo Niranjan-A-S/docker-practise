@@ -23,3 +23,5 @@
 - Volumes helps to persist the data even if the container is removed
 - Volumes are the folders in the host machine hard drive which are mounted (made available or mapped) to the container.
 - A container can read and write data into a volume and read data from it
+- There are two types of volumes - anonymous and named. Anonymous volume only exists as long as the container exists. If the container is removed it is gone. It is managed by docker engine.
+- In case of named volumes volumes, folder in the host drive  will survive the container shutdown
