@@ -18,3 +18,8 @@
 - These layers are read only once build.
 - Once the container is started one more container base layer is added on top of these layers. This container layer is read-write and can be modified.
 - After any modifications to the code layer corresponding to the changed instruction  and the subsequent layers are rebuilt. Other layers on top of it fetched from the cache.
+
+### Volumes
+- Volumes helps to persist the data even if the container is removed
+- Volumes are the folders in the host machine hard drive which are mounted (made available or mapped) to the container.
+- A container can read and write data into a volume and read data from it
