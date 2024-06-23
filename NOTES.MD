@@ -44,3 +44,11 @@ docker run  --name feedback-bind-mount -d -p 8080:3000 -v feedback:/app/feedback
 docker run -d -p 8080:3000 -v feedback:/app/feedback -v "C:\Users\niranjan.santhosh\DATA\personal\practise\docker-course\app-volumes:/app:ro" -v /app/node_modules -v /app/temp  bdb7347e347f
  ```
 - In the above command we make the bind mount read only by adding "ro" but then we need to specify "/app/temp" because here writing happens
+
+![alt text](snapshots/image-3.png)
+
+```bash
+docker run -d --rm -p:8080:5000 --env PORT=5000 b604a493984493e2f846a6c6ac5bf13dc5173ba5d783c793fce1182e989ca309 
+```
+- the --env flag will help to allow set env variables that are available in the runtime also (--env or -e)
+- to include the .env file add the flag --env-file
