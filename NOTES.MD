@@ -57,3 +57,8 @@ docker run -d --rm -p:8080:5000 --env PORT=5000 b604a493984493e2f846a6c6ac5bf13d
     docker build -t feedback:arg --build-arg DEFAULT_PORT=4000 . 
 # here the DEFAULT_PORT argument variable is used in the Dockerfile so that when we build the docker image we will be using this value in the runtime
  ```
+
+### Containers and Networks
+- requests from container to www
+- requests from container to service running in the host machine
+- requests from container to other container
