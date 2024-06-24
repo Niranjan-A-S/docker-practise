@@ -87,7 +87,7 @@ const PORT = process.env.PORT || 3000;
 (async () => {
     try {
         console.log('Connecting to MongoDB');
-        await mongoose.connect('mongodb://host.docker.internal:27017/goals');
+        await mongoose.connect('mongodb://mongo:27017/goals');
         console.log(`MongoDB is running`);
         app.listen(PORT, () => {
             console.log('Application running on port ' + PORT);

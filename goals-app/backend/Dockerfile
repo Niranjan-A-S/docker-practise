@@ -12,4 +12,4 @@ EXPOSE 8000
 
 COPY . .
 
-CMD ["yarn", "start"]
+CMD ["node", "app.js"]
