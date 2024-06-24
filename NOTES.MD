@@ -62,3 +62,12 @@ docker run -d --rm -p:8080:5000 --env PORT=5000 b604a493984493e2f846a6c6ac5bf13d
 - requests from container to www
 - requests from container to service running in the host machine
 - requests from container to other container
+
+- use **host.docker.internal** to connect to services running in host
+
+### Networks
+- Using networks in docker we can create set of networks and connect all the container required to this network
+- First we need to create a network, then run different containers using --network flag
+- So in this case we can use the containers names instead of the IP and docker will automatically resolve it for us
+
+![image-4](snapshots/image-4.png)
