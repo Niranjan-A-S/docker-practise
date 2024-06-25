@@ -15,7 +15,7 @@ function App() {
 
             try {
                 // const response = await fetch('http://localhost/goals');
-                const response = await fetch('http://vigorous_thompson/goals');
+                const response = await fetch('http://localhost:3001/goals');
                 // const response = await fetch('http://goals-backend/goals');
 
                 const resData = await response.json();
@@ -42,7 +42,7 @@ function App() {
 
         try {
             // const response = await fetch('http://localhost/goals', {
-            const response = await fetch('http://vigorous_thompson/goals', {
+            const response = await fetch('http://localhost:3001/goals', {
                 // const response = await fetch('http://goals-backend/goals', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -83,7 +83,7 @@ function App() {
 
         try {
             // const response = await fetch('http://localhost/goals/' + goalId, {
-            const response = await fetch('http://vigorous_thompson/goals/' + goalId, {
+            const response = await fetch('http://localhost:3001/goals/' + goalId, {
                 // const response = await fetch('http://goals-backend/goals/' + goalId, {
                 method: 'DELETE',
             });
