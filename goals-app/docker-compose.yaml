@@ -1,0 +1,18 @@
+version: "3.8" 
+services:
+    mongodb:
+        image: 'mongo'
+        volumes:
+            - goals-data:/data/db
+        # environment:
+        #     MONGO_INITDB_ROOT_USERNAME: niranjan
+        #     MONGO_INITDB_ROOT_PASSWORD: secret
+        env_file:
+            - ./env/.env.mongo
+    # backend:
+    # frontend:
+volumes:
+    goals-data: # this is required (only named volumes need to be specified)
+
+# when using docker compose a network will be automatically created by docker compose so not necessary to specify it again
+# Compose V2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the version top-level element optional.
