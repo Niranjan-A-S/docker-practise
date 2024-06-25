@@ -71,3 +71,10 @@ docker run -d --rm -p:8080:5000 --env PORT=5000 b604a493984493e2f846a6c6ac5bf13d
 - So in this case we can use the containers names instead of the IP and docker will automatically resolve it for us
 
 ![image-4](snapshots/image-4.png)
+
+## Compose
+- Docker compose is used to manage multi container applications
+- We don't need to specify the -d or --rm flag in the compose file because default behavior is detached only.
+- Also it creates default network
+- the container will be started on docker-compose up command and it will removed on down command
+- network also will be deleted but we need to clear volume manually
