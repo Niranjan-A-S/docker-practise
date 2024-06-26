@@ -9,6 +9,8 @@ services:
         #     MONGO_INITDB_ROOT_PASSWORD: secret
         env_file:
             - ./env/.env.mongo
+        ports:
+            - 27017:27017
     # backend:
     # frontend:
 volumes:
