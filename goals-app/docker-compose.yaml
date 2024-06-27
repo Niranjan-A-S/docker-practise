@@ -1,19 +1,44 @@
 services:
     mongodb:
         image: 'mongo'
+        container_name: mongo
         volumes:
             - goals-data:/data/db
         # environment:
         #     MONGO_INITDB_ROOT_USERNAME: niranjan
         #     MONGO_INITDB_ROOT_PASSWORD: secret
         env_file:
-            - ./env/.env.mongo
+            - ./env/.env
         ports:
             - 27017:27017
-    # backend:
-    # frontend:
+    backend:
+        # build:
+        #     context: ./backend
+        #     dockerfile: Dockerfile
+        #     args:
+        #         - name=value
+        build: ./backend
+        env_file:
+            - ./env/.env
+        ports:
+            - 3001:8000
+        volumes:
+            - logs:/app/logs
+            # - ./backend:/app
+            # - /app/node_modules
+        depends_on:
+            - mongodb
+    frontend:
+        build: ./frontend
+        ports:
+            - 5173:5173
+        stdin_open: true
+        tty: true #interactive mode
+        depends_on:
+            - backend
 volumes:
     goals-data: # this is required (only named volumes need to be specified)
+    logs:
 
 # when using docker compose a network will be automatically created by docker compose so not necessary to specify it again
 # Compose V2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the version top-level element optional.
