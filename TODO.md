@@ -1,1 +1,0 @@
-- Setup mongoDB container with authentication

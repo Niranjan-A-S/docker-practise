@@ -78,3 +78,7 @@ docker run -d --rm -p:8080:5000 --env PORT=5000 b604a493984493e2f846a6c6ac5bf13d
 - Also it creates default network
 - the container will be started on docker-compose up command and it will removed on down command
 - network also will be deleted but we need to clear volume manually
+
+### Util Containers
+docker build -t node-util .
+docker run -it -v C:\Users\niranjan.santhosh\DATA\personal\practise\docker-course\util-container:/ap node-util yarn init
