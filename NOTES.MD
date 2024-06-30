@@ -83,5 +83,3 @@ docker run -d --rm -p:8080:5000 --env PORT=5000 b604a493984493e2f846a6c6ac5bf13d
 docker build -t node-util .
 docker run -it -v C:\Users\niranjan.santhosh\DATA\personal\practise\docker-course\util-container:/ap node-util yarn init
 docker-compose run yarn-util 
-
-test
