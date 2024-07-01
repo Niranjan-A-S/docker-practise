@@ -83,3 +83,10 @@ docker run -d --rm -p:8080:5000 --env PORT=5000 b604a493984493e2f846a6c6ac5bf13d
 docker build -t node-util .
 docker run -it -v C:\Users\niranjan.santhosh\DATA\personal\practise\docker-course\util-container:/ap node-util yarn init
 docker-compose run yarn-util 
+
+
+### Multi Stage Builds
+- If creating the image involves multiple stages we can make use of this concept.
+- Define the first base image using "as"
+- In the next stage refer to the base stage using "--from="
+- In the build step we can refer to stage using the "-target directive"
