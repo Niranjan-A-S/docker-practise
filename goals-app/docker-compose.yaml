@@ -19,7 +19,7 @@ services:
         #         - name=value
         build: ./backend
         env_file:
-            - ./env
+            - ./.env
         ports:
             - 3001:8000
         volumes:
@@ -34,8 +34,8 @@ services:
             - 5173:5173
         stdin_open: true
         tty: true #interactive mode
-        depends_on:
-            - backend
+        # depends_on:
+        #     - backend
 volumes:
     goals-data: # this is required (only named volumes need to be specified)
     logs:
