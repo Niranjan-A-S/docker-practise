@@ -90,3 +90,5 @@ docker-compose run yarn-util
 - Define the first base image using "as"
 - In the next stage refer to the base stage using "--from="
 - In the build step we can refer to stage using the "-target directive"
+
+![alt text](snapshots/image-5.png)
