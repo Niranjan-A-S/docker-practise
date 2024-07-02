@@ -82,14 +82,18 @@ app.delete('/goals/:id', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    return res.status(200).send('Everything is working fine');
+});
+
 const PORT = process.env.PORT || 3000;
 
 (async () => {
     try {
         console.log('Connecting to MongoDB');
-        const CONNECTION_STRING = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017/goals?authSource=admin`
+        // const CONNECTION_STRING = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@${process.env.MONGODB_DOMAIN}:27017/goals?authSource=admin`
         // const CONNECTION_STRING = `mongodb://niranjan:secret@mongodb:27017/goals?authSource=admin`
-        // const CONNECTION_STRING = `mongodb://localhost:27017/goals`;
+        const CONNECTION_STRING = `mongodb://localhost:27017/goals`;
         // const CONNECTION_STRING = `mongodb://niranjan:secret@localhost:27017/goals?authSource=admin`;
         // const CONNECTION_STRING = `mongodb://mongodb:27017/goals`;
         //

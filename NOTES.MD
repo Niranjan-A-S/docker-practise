@@ -92,3 +92,6 @@ docker-compose run yarn-util
 - In the build step we can refer to stage using the "-target directive"
 
 ![alt text](snapshots/image-5.png)
+
+###
+- Never use container names to point to network in cloud deployments
